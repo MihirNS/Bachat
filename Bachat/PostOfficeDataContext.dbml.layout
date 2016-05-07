@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 12, 14.25" name="PostOfficeDataContext">
+  <DataContextMoniker Name="/PostOfficeDataContextDataContext" />
+  <nestedChildShapes>
+    <classShape Id="5ca7c367-b414-43a8-b9f4-0197c9997ec2" absoluteBounds="6.75, 7.75, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/PostOfficeDataContextDataContext/AgentProfile" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7a51c048-7e96-4cb2-9995-60555ed54a86" absoluteBounds="6.765, 8.21, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2437b177-3b9e-461e-9d5b-6ac122c75115" absoluteBounds="0.75, 4.125, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/PostOfficeDataContextDataContext/Scheme" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3ebeff9e-01a0-427d-a467-ee4a301363f0" absoluteBounds="0.765, 4.585, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3ca5a60d-dbd8-4184-98dd-1e904dcd7cf2" absoluteBounds="6.5, 2.875, 2, 3.6939111328124992">
+      <DataClassMoniker Name="/PostOfficeDataContextDataContext/NKMDepositer" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ac5f7e30-639f-4a33-b34e-81a8ae3a9ccf" absoluteBounds="6.515, 3.335, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2f40e4b8-fa02-4a57-b26c-8fb4d31dbf4b" absoluteBounds="9.25, 3.25, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/PostOfficeDataContextDataContext/NKMTDSRegister" />
+      <nestedChildShapes>
+        <elementListCompartment Id="dd32ec40-cfb8-4023-9be9-c6db92b6b316" absoluteBounds="9.265, 3.71, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="58c2b5f1-6b04-4165-8c57-15185e37c879" absoluteBounds="3.75, 1.125, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/PostOfficeDataContextDataContext/PostOffice" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3715e5db-4853-408b-899e-f8b648ba2896" absoluteBounds="3.765, 1.585, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e6c24ca6-1ca2-4142-b828-4cc17d4fcdc6" absoluteBounds="3.5, 10.875, 2, 3.1170068359375023">
+      <DataClassMoniker Name="/PostOfficeDataContextDataContext/RDRegister" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2f5d4511-74b3-46cc-a76a-7f44c5394328" absoluteBounds="3.515, 11.335, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="87969c8c-2b71-4e0f-be04-d3ca55cedb2f" absoluteBounds="9.75, 7.75, 2, 2.9247054036458318">
+      <DataClassMoniker Name="/PostOfficeDataContextDataContext/RDTDSRegister" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8bd5fb38-9d1e-413e-aa2c-903285bc7307" absoluteBounds="9.765, 8.21, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="719473d6-aa1c-4a2a-a8e3-417958f760eb" absoluteBounds="3.5, 8.125, 2, 1.9631982421874987">
+      <DataClassMoniker Name="/PostOfficeDataContextDataContext/RebetRDEntryDue" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3152dccf-3edb-4f2b-933a-e3c54078f802" absoluteBounds="3.515, 8.585, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="102047ac-1a1e-460b-9578-c40a34758b70" absoluteBounds="0.75, 8.75, 2, 4.6554182942708309">
+      <DataClassMoniker Name="/PostOfficeDataContextDataContext/RecurringDepositCustomer" />
+      <nestedChildShapes>
+        <elementListCompartment Id="204523b0-70ba-487b-a671-9be874c00a10" absoluteBounds="0.765, 9.21, 1.9700000000000002, 4.095418294270833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ebfe0e89-62da-41e2-9ce8-2cdf7eb9901f" absoluteBounds="3.5, 3.375, 2, 2.5401025390625005">
+      <DataClassMoniker Name="/PostOfficeDataContextDataContext/SchemeRegister" />
+      <nestedChildShapes>
+        <elementListCompartment Id="805a0dd9-80dc-4749-8cf8-c7834ef10d73" absoluteBounds="3.515, 3.835, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(1.75 : 5.31899251302083); (1.75 : 6.2732568359375); (6.5 : 6.2732568359375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/PostOfficeDataContextDataContext/Scheme/Scheme_NKMDepositer" />
+      <nodes>
+        <classShapeMoniker Id="2437b177-3b9e-461e-9d5b-6ac122c75115" />
+        <classShapeMoniker Id="3ca5a60d-dbd8-4184-98dd-1e904dcd7cf2" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.5 : 4.61620198567708); (9.25 : 4.61620198567708)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/PostOfficeDataContextDataContext/NKMDepositer/NKMDepositer_NKMTDSRegister" />
+      <nodes>
+        <classShapeMoniker Id="3ca5a60d-dbd8-4184-98dd-1e904dcd7cf2" />
+        <classShapeMoniker Id="2f40e4b8-fa02-4a57-b26c-8fb4d31dbf4b" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.75 : 1.72199625651042); (7.5 : 1.72199625651042); (7.5 : 2.875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/PostOfficeDataContextDataContext/PostOffice/PostOffice_NKMDepositer" />
+      <nodes>
+        <classShapeMoniker Id="58c2b5f1-6b04-4165-8c57-15185e37c879" />
+        <classShapeMoniker Id="3ca5a60d-dbd8-4184-98dd-1e904dcd7cf2" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 12.1402091471354); (3.5 : 12.1402091471354)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/PostOfficeDataContextDataContext/RecurringDepositCustomer/RecurringDepositCustomer_RDRegister" />
+      <nodes>
+        <classShapeMoniker Id="102047ac-1a1e-460b-9578-c40a34758b70" />
+        <classShapeMoniker Id="e6c24ca6-1ca2-4142-b828-4cc17d4fcdc6" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 9.41909912109375); (3.5 : 9.41909912109375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/PostOfficeDataContextDataContext/RecurringDepositCustomer/RecurringDepositCustomer_RebetRDEntryDue" />
+      <nodes>
+        <classShapeMoniker Id="102047ac-1a1e-460b-9578-c40a34758b70" />
+        <classShapeMoniker Id="719473d6-aa1c-4a2a-a8e3-417958f760eb" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 4.72199625651042); (3.5 : 4.72199625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/PostOfficeDataContextDataContext/Scheme/Scheme_SchemeRegister" />
+      <nodes>
+        <classShapeMoniker Id="2437b177-3b9e-461e-9d5b-6ac122c75115" />
+        <classShapeMoniker Id="ebfe0e89-62da-41e2-9ce8-2cdf7eb9901f" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

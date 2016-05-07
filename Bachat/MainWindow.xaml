@@ -1,0 +1,35 @@
+﻿<mui:ModernWindow x:Class="Bachat.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+        Title="Post Office Bachat" IsTitleVisible="True"
+        LogoData="{StaticResource ApplicationIconData}"          
+        ContentSource="/Pages/RecurringDeposit.xaml" WindowState="Maximized" Icon="{StaticResource ApplicationLogo}">
+
+    <mui:ModernWindow.MenuLinkGroups>
+        <mui:LinkGroup DisplayName="accounts">
+            <mui:LinkGroup.Links>
+                <mui:Link DisplayName="Recurring Deposit" Source="/Pages/RecurringDeposit.xaml" />
+                <mui:Link DisplayName="Monthly Deposit Entry" Source="/Pages/MonthlyDeposit.xaml" />
+                <mui:Link DisplayName="NSC / KVP / MIS" Source="/Pages/NKMDeposit.xaml" />
+                <mui:Link DisplayName="post offices and schemes" Source="/Pages/PostOfficeSchemes.xaml" />
+            </mui:LinkGroup.Links>
+        </mui:LinkGroup>
+        <mui:LinkGroup DisplayName="reports">
+            <mui:LinkGroup.Links>
+                <mui:Link DisplayName="tds register" Source="/Pages/TDSRegister.xaml" />
+                <mui:Link DisplayName="datewise nkm entries" Source="/Pages/NKMDatewiseEntries.xaml" />
+                <mui:Link DisplayName="debit rd entry" Source="/Pages/DebitRDEntry.xaml" />
+                <mui:Link DisplayName="rebate rd due entry" Source="/Pages/RebateRDEntry.xaml" />
+                <mui:Link DisplayName="summary report for rd account" Source="/Pages/SummaryReportforRD.xaml" />
+                <mui:Link DisplayName="rd balance as on" Source="/Pages/RDBalanceByDate.xaml" />
+                <mui:Link DisplayName="family codewise report" Source="/Pages/FamilyCodewiseReport.xaml" />
+                <mui:Link DisplayName="datewise rd entries" Source="/Pages/RDDatewiseEntries.xaml" />
+            </mui:LinkGroup.Links>
+        </mui:LinkGroup>
+    </mui:ModernWindow.MenuLinkGroups>
+    
+    <mui:ModernWindow.TitleLinks>
+        <mui:Link DisplayName="settings" Source="/Pages/SettingsPage.xaml" />
+    </mui:ModernWindow.TitleLinks>
+</mui:ModernWindow>

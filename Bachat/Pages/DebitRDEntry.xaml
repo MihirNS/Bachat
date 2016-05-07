@@ -1,0 +1,17 @@
+﻿<UserControl x:Class="Bachat.Pages.DebitRDEntry"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mui="http://firstfloorsoftware.com/ModernUI">
+    <Grid Style="{StaticResource ContentRoot}">
+        <DockPanel>
+            <StackPanel  DockPanel.Dock="Top" Width="1180">
+                <TextBlock Text="Debit Recurring Deposit Customer Entry" Style="{StaticResource Heading2}" Margin="0,0,0,8" />
+            </StackPanel>
+            <FlowDocumentScrollViewer Height="500" Width="810" Name="flwScrollViewDebitRDEntry">
+                <FlowDocument Name="flwDebitRDEntry" FontStyle="Normal" FontFamily="Segoe UI"/>
+            </FlowDocumentScrollViewer>
+        </DockPanel>
+    </Grid>
+</UserControl>

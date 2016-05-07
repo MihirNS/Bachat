@@ -1,0 +1,38 @@
+﻿<mui:ModernDialog x:Class="Bachat.Dialogs.DepositCustomerDialog"
+                  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+                  xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+                  xmlns:Microsoft_Windows_Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero"
+                  xmlns:local="clr-namespace:Bachat.Helpers"
+                  xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+                  Title="NSC/KVP/MIS Entry" WindowStartupLocation="CenterScreen">
+
+    <Grid>
+        <StackPanel MinWidth="200" Margin="0">
+            <StackPanel x:Name="Form" Orientation="Vertical">
+                <Canvas Height="200" HorizontalAlignment="Left" Name="cvsRDCustomer" VerticalAlignment="Top" Width="550">
+
+                    <TextBox Canvas.Left="5" Canvas.Top="5" Height="25" Text="{Binding DepositerNo, Mode=TwoWay, ValidatesOnDataErrors=True}" Name="txtDepositerAccNo" Width="150" Template="{DynamicResource WatermarkedTextBoxTemplate}" local:TextBoxHelper.Watermark="Depositer No" ToolTip="Depositer No"/>
+                    <TextBox Canvas.Left="170" Canvas.Top="5" Height="25" Text="{Binding FamilyCode, Mode=TwoWay, ValidatesOnDataErrors=True}" Name="txtFamilyCode" Width="150" Template="{DynamicResource WatermarkedTextBoxTemplate}" local:TextBoxHelper.Watermark="Family Code" ToolTip="Family Code"/>
+                    <ComboBox Canvas.Left="335" Canvas.Top="5" Height="25" ItemsSource="{Binding}" SelectedItem="{Binding Scheme.TypeOfInvestment}" Name="cmbTypeOfInvestment" Width="150" ToolTip="Type Of Investment" />
+
+                    <TextBox Canvas.Left="5" Canvas.Top="40" Height="25" Text="{Binding DepositerName, Mode=TwoWay, ValidatesOnDataErrors=True}" Name="txtDepositerName" Width="150" Template="{DynamicResource WatermarkedTextBoxTemplate}" local:TextBoxHelper.Watermark="Depositor Name" ToolTip="Depositor Name"/>
+                    <TextBox Canvas.Left="170" Canvas.Top="40" Height="25" Text="{Binding SecondName, Mode=TwoWay, ValidatesOnDataErrors=True}" Name="txtSecondName" Width="150" Template="{DynamicResource WatermarkedTextBoxTemplate}" local:TextBoxHelper.Watermark="Second Name" ToolTip="Second Name"/>
+                    <TextBox Canvas.Left="335" Canvas.Top="40" Height="25" Text="{Binding Nomination, Mode=TwoWay, ValidatesOnDataErrors=True}" Name="txtNameOfNominee" Width="150" Template="{DynamicResource WatermarkedTextBoxTemplate}" local:TextBoxHelper.Watermark="Nominee" ToolTip="Nominee"/>
+
+                    <TextBox Canvas.Left="5" Canvas.Top="75" Height="25" Text="{Binding Address, Mode=TwoWay, ValidatesOnDataErrors=True}" Name="txtAddress" Width="315" Template="{DynamicResource WatermarkedTextBoxTemplate}" local:TextBoxHelper.Watermark="Address" ToolTip="Address"/>
+                    <TextBox Canvas.Left="335" Canvas.Top="75" Height="25" Text="{Binding City, Mode=TwoWay, ValidatesOnDataErrors=True}" Name="txtCity" Width="120" Template="{DynamicResource WatermarkedTextBoxTemplate}" local:TextBoxHelper.Watermark="City" ToolTip="City"/>
+
+                    <TextBox Canvas.Left="5" Canvas.Top="145" Height="25" Text="{Binding Amount, Mode=TwoWay, ValidatesOnDataErrors=True}" Name="txtAmount" Width="150" Template="{DynamicResource WatermarkedTextBoxTemplate}" local:TextBoxHelper.Watermark="Amount" ToolTip="Amount"/>
+                    <TextBox Canvas.Left="170" Canvas.Top="145" Height="25" Text="{Binding CertificateNo, Mode=TwoWay, ValidatesOnDataErrors=True}" Name="txtCertificateNumber" Width="150" Template="{DynamicResource WatermarkedTextBoxTemplate}" local:TextBoxHelper.Watermark="Certificate/Acc No." ToolTip="Certificate/Acc No."/>
+                    <TextBox Canvas.Left="335" Canvas.Top="145" Height="25" Text="{Binding RegistrationNo, Mode=TwoWay, ValidatesOnDataErrors=True}" Name="txtRegisterNo" Width="150" Template="{DynamicResource WatermarkedTextBoxTemplate}" local:TextBoxHelper.Watermark="Register No" ToolTip="Register No"/>
+
+                    <DatePicker Canvas.Left="5" Canvas.Top="180" Height="25" SelectedDate="{Binding DateOfDeposit, Mode=TwoWay, ValidatesOnDataErrors=True}" Name="dtpDateOfDeposit" Width="150" Tag="Deposit Date" ToolTip="Deposit Date"/>
+                    <ComboBox Canvas.Left="170" Canvas.Top="180" Height="25" ItemsSource="{Binding}" SelectedItem="{Binding PostOffice1.PostOfficeName}" Name="cmbPostOffice" Width="150" ToolTip="Select Post Office" />
+                </Canvas>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+
+</mui:ModernDialog>

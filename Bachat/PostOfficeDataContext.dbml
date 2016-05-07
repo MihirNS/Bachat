@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="PostOfficeAccountManagement" Class="PostOfficeDataContextDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\App_Data\PostOfficeAccountManagement.mdf;Integrated Security=True" SettingsObjectName="Bachat.Properties.Settings" SettingsPropertyName="PostOfficeAccountManagementConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.AgentProfile" Member="AgentProfiles">
+    <Type Name="AgentProfile">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Type" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="AgentName" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Address" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="AuthorityNo" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="TDS" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Sur" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Commission" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="IssueDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ValidUpto" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Schemes" Member="Schemes">
+    <Type Name="Scheme">
+      <Column Name="SchemeNo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TypeOfInvestment" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Association Name="Scheme_NKMDepositer" Member="NKMDepositers" ThisKey="SchemeNo" OtherKey="TypeOfInvestment" Type="NKMDepositer" />
+      <Association Name="Scheme_SchemeRegister" Member="SchemeRegisters" ThisKey="SchemeNo" OtherKey="TypeOfInvestment" Type="SchemeRegister" />
+    </Type>
+  </Table>
+  <Table Name="dbo.NKMDepositers" Member="NKMDepositers">
+    <Type Name="NKMDepositer">
+      <Column Name="DepositerNo" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TypeOfInvestment" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DepositerName" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="SecondName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="FamilyCode" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Nomination" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Amount" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="CertificateNo" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="RegistrationNo" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="DateOfDeposit" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="PostOffice" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MaturityDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="MaturityAmount" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Association Name="NKMDepositer_NKMTDSRegister" Member="NKMTDSRegister" ThisKey="DepositerNo" OtherKey="DepositerNo" Type="NKMTDSRegister" Cardinality="One" />
+      <Association Name="Scheme_NKMDepositer" Member="Scheme" ThisKey="TypeOfInvestment" OtherKey="SchemeNo" Type="Scheme" IsForeignKey="true" />
+      <Association Name="PostOffice_NKMDepositer" Member="PostOffice1" ThisKey="PostOffice" OtherKey="ID" Type="PostOffice" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.NKMTDSRegister" Member="NKMTDSRegisters">
+    <Type Name="NKMTDSRegister">
+      <Column Name="DepositerNo" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Type" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="IssueDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="GrossAmount" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Commission" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="TDS" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Sur" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Total" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="NetCommission" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="MonthYearValue" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Association Name="NKMDepositer_NKMTDSRegister" Member="NKMDepositer" ThisKey="DepositerNo" OtherKey="DepositerNo" Type="NKMDepositer" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PostOffices" Member="PostOffices">
+    <Type Name="PostOffice">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PostOfficeName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="PostOffice_NKMDepositer" Member="NKMDepositers" ThisKey="ID" OtherKey="PostOffice" Type="NKMDepositer" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RDRegister" Member="RDRegisters">
+    <Type Name="RDRegister">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="LotNo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="RDAccountNo" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CardNo" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Amount" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Due" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Rebate" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Balance" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Remarks" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="MonthYearValue" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Association Name="RecurringDepositCustomer_RDRegister" Member="RecurringDepositCustomer" ThisKey="RDAccountNo" OtherKey="RDAccountNo" Type="RecurringDepositCustomer" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RDTDSRegister" Member="RDTDSRegisters">
+    <Type Name="RDTDSRegister">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="LotNo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Type" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="Date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="GrossAMT" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Commission" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="TDS" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Sur" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Total" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="NetCommission" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="MonthYearValue" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RebetRDEntryDue" Member="RebetRDEntryDues">
+    <Type Name="RebetRDEntryDue">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RDAccountNo" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="DepositerName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="NextDueDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Amount" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Balance" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Association Name="RecurringDepositCustomer_RebetRDEntryDue" Member="RecurringDepositCustomer" ThisKey="RDAccountNo" OtherKey="RDAccountNo" Type="RecurringDepositCustomer" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RecurringDepositCustomer" Member="RecurringDepositCustomers">
+    <Type Name="RecurringDepositCustomer">
+      <Column Name="RDAccountNo" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="FamilyCode" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="DateOfOpening" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DepositerName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SecondName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NameOfNominee" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Amount" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="CardNo" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="PhoneNo" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="DateOfBirth" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ClosedAccount" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ClosingDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Balance" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="LastCreditDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NextDueDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsDeleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="MaturityDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MaturityAmount" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Association Name="RecurringDepositCustomer_RDRegister" Member="RDRegisters" ThisKey="RDAccountNo" OtherKey="RDAccountNo" Type="RDRegister" />
+      <Association Name="RecurringDepositCustomer_RebetRDEntryDue" Member="RebetRDEntryDues" ThisKey="RDAccountNo" OtherKey="RDAccountNo" Type="RebetRDEntryDue" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SchemeRegister" Member="SchemeRegisters">
+    <Type Name="SchemeRegister">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TypeOfInvestment" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FromDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ToDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Amount" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="InterestWithAmount" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Year" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Month" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Day" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Scheme_SchemeRegister" Member="Scheme" ThisKey="TypeOfInvestment" OtherKey="SchemeNo" Type="Scheme" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

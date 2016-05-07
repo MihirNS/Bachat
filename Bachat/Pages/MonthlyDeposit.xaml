@@ -1,0 +1,53 @@
+﻿<UserControl x:Class="Bachat.Pages.MonthlyDeposit"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mui="http://firstfloorsoftware.com/ModernUI" Width="1206">
+    <Grid Style="{StaticResource ContentRoot}">
+        <DockPanel>
+            <StackPanel DockPanel.Dock="Top" Width="1180">
+                <TextBlock Text="Recurring Deposit Monthly Entry" Style="{StaticResource Heading2}" Margin="0,0,0,8" />
+                <Grid Height="28" Width="1180">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <DatePicker x:Name="dtpDate" Width="150" Tag="Select a Date"></DatePicker>
+                    <ComboBox IsEnabled="False" ItemsSource="{Binding}" x:Name="cmbLotNo" Grid.Column="1" Margin="17,0,944,0"/>
+                    <CheckBox x:Name="chkScreen" IsEnabled="False" Content="Print Preview" Margin="106,0,774,0" Grid.Column="1"/>
+                    <mui:ModernButton x:Name="btnPrint" EllipseStrokeThickness="0" IsEnabled="False" ToolTip="Print" Grid.Column="1" Margin="223,0,477,0" Cursor="Hand" Foreground="Gray" IconHeight="40" IconWidth="20" IconData="{StaticResource PrinterIconData}" />
+                    <Button x:Name="btnAddMonthlyEntry" Content="Add New" Grid.Column="1" Margin="919,0,12,0"/>
+                </Grid>
+            </StackPanel>
+            <DataGrid Name="dtgRDRegister" ItemsSource="{Binding}" AutoGenerateColumns="False" Width="1180">
+                <DataGrid.Columns>
+                    <mui:DataGridTextColumn Binding="{Binding LotNo}" Header="Lot No."/>
+                    <mui:DataGridTextColumn Binding="{Binding RDAccountNo}" Header="Account No" IsReadOnly="True"/>
+                    <mui:DataGridTextColumn Binding="{Binding Name}" Header="Name" IsReadOnly="True"/>
+                    <mui:DataGridTextColumn Binding="{Binding Date}" Header="Date"/>
+                    <mui:DataGridTextColumn Binding="{Binding CardNo}" Header="Card No."/>
+                    <mui:DataGridTextColumn Binding="{Binding Amount}" Header="Amount"/>
+                    <mui:DataGridTextColumn Binding="{Binding Due}" Header="Due"/>
+                    <mui:DataGridTextColumn Binding="{Binding Rebate}" Header="Rebate"/>
+                    <mui:DataGridTextColumn Binding="{Binding Balance}" Header="Balance"/>
+                    <mui:DataGridTextColumn Binding="{Binding Remarks}" Header="Remarks"/>
+                    <DataGridTemplateColumn Header="">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <mui:ModernButton Click="ModernDeleteButton_Click" EllipseStrokeThickness="0" ToolTip="Delete" Cursor="Hand" Foreground="Red" IconData="{StaticResource RowDeleteIconData}" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+            <FlowDocumentScrollViewer Visibility="Hidden" Height="500" Width="800" Name="flwScrollViewRDList">
+                <FlowDocument Name="flwDocRDList" FontStyle="Normal" FontFamily="Segoe UI"/>
+            </FlowDocumentScrollViewer>
+        </DockPanel>
+    </Grid>
+</UserControl>

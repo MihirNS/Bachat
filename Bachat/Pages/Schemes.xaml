@@ -1,0 +1,29 @@
+﻿<UserControl x:Class="Bachat.Pages.Schemes"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+             mc:Ignorable="d"
+             d:DesignWidth="400">
+    <Grid Style="{StaticResource ContentRoot}">
+        <DockPanel HorizontalAlignment="Left">
+            <StackPanel DockPanel.Dock="Top" Width="400">
+                <TextBlock Text="Schemes" Style="{StaticResource Heading2}" Margin="0,0,0,8" />
+            </StackPanel>
+            <DataGrid Name="dtgSchemes" ItemsSource="{Binding}" AutoGenerateColumns="False" Width="373" >
+                <DataGrid.Columns>
+                    <mui:DataGridTextColumn Binding="{Binding SchemeNo}" Header="SrNo." Visibility="Hidden" IsReadOnly="True"/>
+                    <mui:DataGridTextColumn Binding="{Binding TypeOfInvestment}" Header="Scheme Name"/>
+                    <DataGridTemplateColumn Header="">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <mui:ModernButton Tag="{Binding Path=SchemeNo}" Click="ModernDeleteButton_Click" EllipseStrokeThickness="0" ToolTip="Delete" Cursor="Hand" Foreground="Red" IconData="{StaticResource RowDeleteIconData}" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </DockPanel>
+    </Grid>
+</UserControl>

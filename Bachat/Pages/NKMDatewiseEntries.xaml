@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="Bachat.Pages.NKMDatewiseEntries"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mui="http://firstfloorsoftware.com/ModernUI">
+    <Grid Style="{StaticResource ContentRoot}">
+        <DockPanel>
+            <StackPanel  DockPanel.Dock="Top" Width="1180">
+                <TextBlock Text="NKM Register" Style="{StaticResource Heading2}" Margin="0,0,0,8" />
+                <Grid Height="28" Width="1180">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <ComboBox IsEditable="False" IsEnabled="False" ItemsSource="{Binding}" x:Name="cmbDateType" Width="200" Grid.Column="1" Margin="361,-2,519,2"></ComboBox>
+                    <DatePicker x:Name="dtpTDSFromDate" Tag="From Date" Width="150" Grid.Column="1" Margin="21,-2,909,3" Grid.RowSpan="2" />
+                    <DatePicker x:Name="dtpTDSToDate" IsEnabled="False" Tag="To Date" Width="150" Grid.Column="1" Margin="192,-3,738,0"/>
+                    <Button x:Name="btnSubmit" IsEnabled="False" Content="Submit" Grid.Column="1" Margin="639,-2,441,2"/>
+                    <mui:ModernButton x:Name="btnPrint" EllipseStrokeThickness="0" IsEnabled="False" ToolTip="Print" Grid.Column="1" Margin="881,0,0,0" Cursor="Hand" Foreground="Gray" IconHeight="40" IconWidth="20" IconData="{StaticResource PrinterIconData}" />
+                </Grid>
+            </StackPanel>
+            <FlowDocumentScrollViewer Height="500" Width="810" Name="flwScrollViewTDSRegister" Visibility="Hidden">
+                <FlowDocument Name="flwTDSRegister" FontStyle="Normal" FontFamily="Segoe UI"/>
+            </FlowDocumentScrollViewer>
+        </DockPanel>
+    </Grid>
+</UserControl>
